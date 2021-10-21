@@ -27,6 +27,15 @@ database.ref().set({
     }
 })
 
-database.ref('location/city').set({
-    city : 'Munich'
-})
+// database.ref('location/city').set({
+//     city : 'Munich'
+// })
+
+// database.ref('age').remove().then( () =>
+//     console.log('Removed Succesfuly!')
+// ).catch(e => console.log(e));
+
+
+console.log(
+    database.ref().get()
+)

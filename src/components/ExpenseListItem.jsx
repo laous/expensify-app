@@ -11,7 +11,7 @@ function ExpenseListItem({dispatch , id , description , amount , createdAt}) {
     return (
         <div>
             <h3>{description}</h3>
-            <p>Amount = {amount} - Creation Date = {createdAt}</p>
+            <p>Amount = {amount} </p>
             <button onClick={handleRemove}><AiFillDelete /></button>
             <button ><Link to={editLink}> <RiEditBoxLine /></Link> </button>
             
