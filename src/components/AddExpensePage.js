@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { addExpense } from '../actions/expenses';
 import { getVisibleExpense } from '../selectors/expenses';
 import ExpensifyForm from "./ExpensifyForm";
 

@@ -3,6 +3,7 @@ import AppRouter from './router/AppRouter';
 import configureStore from './store/configureStore';
 import {addExpense, editExpense} from './actions/expenses';
 import { Provider } from 'react-redux';
+import './firebase/firebase'
 
 
 const expensifyStore = configureStore();

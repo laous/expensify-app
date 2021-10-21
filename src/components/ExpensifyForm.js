@@ -4,6 +4,11 @@ import {useState} from 'react';
 import { addExpense, editExpense } from '../actions/expenses';
 import { Redirect } from 'react-router-dom';
 import moment from 'moment';
+import "react-datepicker/dist/react-datepicker.css";
+import DatePicker from "react-datepicker";;
+
+
+
 
 function ExpensifyForm(props) {
     
@@ -11,12 +16,12 @@ function ExpensifyForm(props) {
         description : '',
         amount : '',
         note: '',
-        createdAt: moment().format("MMM Do, YYYY")
+        createdAt: moment().toDate(),
     };
 
     if(props.id){
         props.expenses.filter(
-            (expense) => {
+            (expense) => { 
                 if(expense.id === props.id){
                     exp = expense;
                 }
@@ -28,7 +33,10 @@ function ExpensifyForm(props) {
     const [state, setstate] = useState({
         description:exp.description,
         note:exp.note,
-        amount:exp.amount 
+        amount:exp.amount ,
+        createdAt:exp.createdAt,
+        focused: false 
+
     })
 
     const onDescriptionChange = (e) => {
@@ -89,11 +97,7 @@ function ExpensifyForm(props) {
                     onChange={onAmountChange}
                 /><br/>
 
-                <input 
-                    type="number" 
-                    // defaultValue={createdAt} 
-                    placeholder="Created At"
-                /><br/>
+                <DatePicker selected={state.createdAt} onChange={(date) => setstate({createdAt: date})} />
 
                 <button onClick={handleSubmit}>
                     {props.add ? "Add Expense" : "Edit Expense"}

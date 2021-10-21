@@ -7,6 +7,7 @@ import ExpenseListFilters from './ExpenseListFIlters';
 function ExpenseList(props) {
     return (
         <div>
+            Viewing {props.expenses.length} items.<br/>
             Expense List items: 
             <ExpenseListFilters/>
             {props.expenses.map(

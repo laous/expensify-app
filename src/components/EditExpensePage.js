@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-import {  editExpense } from "../actions/expenses";
 import ExpensifyForm from "./ExpensifyForm";
 
 function EditExpensePage (props){
